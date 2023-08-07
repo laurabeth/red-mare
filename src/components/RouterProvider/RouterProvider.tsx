@@ -17,8 +17,8 @@ import {
 } from "../../features";
 import { Layout } from "../../Layout";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
+const Elements = () => {
+  return (
     <Route element={<Layout />}>
       <Route path="/" element={<Home />} />
       <Route path="/appraisals" element={<Appraisals />} />
@@ -30,7 +30,9 @@ const router = createBrowserRouter(
       </Route>
       <Route path="/*" element={<NotFound />} />
     </Route>
-  )
-);
+  );
+};
+
+const router = createBrowserRouter(createRoutesFromElements(<Elements />));
 
 export const RouterProvider = () => <ReactRouterProvider router={router} />;

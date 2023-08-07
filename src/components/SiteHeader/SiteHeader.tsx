@@ -14,22 +14,28 @@ export const SiteHeader: FC = () => {
       <Container
         disableGutters
         maxWidth={false}
-        sx={{ display: "flex", justifyContent: "space-between", width: "100%" }}
-      >
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          width: "100%",
+        }}>
         <Toolbar>
           <Link
             component={RouterLink}
             variant="h5"
             to="/"
             sx={{
-              letterSpacing: ".3rem",
               fontWeight: 700,
+              letterSpacing: ".3rem",
               textDecoration: "none",
-            }}
-          >
+            }}>
             <RedMare height="60px" width="60px" fill={palette.secondary.main} />
           </Link>
-          <Box sx={{ flexGrow: 1, display: "flex" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexGrow: 1,
+            }}>
             {Object.entries(featureDictionary).map(([title, path]) => (
               <Link
                 key={path}
@@ -37,13 +43,12 @@ export const SiteHeader: FC = () => {
                 to={path}
                 sx={{
                   color: palette.primary.main,
-                  textDecoration: "none",
                   fontFamily: "Roboto",
                   marginLeft: spacing(2),
                   marginRight: spacing(2),
+                  textDecoration: "none",
                   textTransform: "uppercase",
-                }}
-              >
+                }}>
                 {title}
               </Link>
             ))}
