@@ -1,14 +1,23 @@
 import { FC } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { gql, useQuery } from "@apollo/client";
-import { AppBar, Box, Container, Toolbar, useTheme } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Button,
+  Container,
+  Toolbar,
+  useTheme,
+} from "@mui/material";
 import Link from "@mui/material/Link";
+import { useColorModeContext } from "src/contexts/ColorMode/ColorModeContext";
 
 import { RedMare } from "../Svgs/RedMare";
 
 export const SiteHeader: FC = () => {
   const { data } = useQuery(USER_AUTH_QUERY);
   const { palette } = useTheme();
+  const { toggleColorMode } = useColorModeContext();
   const authId = data?.currentUser?.auth.id;
   const adminId = import.meta.env.VITE_ADMIN_ID;
 
@@ -43,6 +52,7 @@ export const SiteHeader: FC = () => {
             <StyledLink path="/training" title="Training" />
             <StyledLink path="/about-me" title="About" />
           </Box>
+          <Button onClick={toggleColorMode}>theme</Button>
         </Toolbar>
       </Container>
     </AppBar>

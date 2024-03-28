@@ -14,10 +14,6 @@ export const FeatureTemplate: FC<FeatureTemplateProps> = ({
   title,
   subtitle,
 }) => {
-  const items = [title, subtitle, ...copy].filter((item) =>
-    Boolean(item)
-  ).length;
-
   return (
     <Container>
       <Typography variant="h1" my={12} textAlign="end">

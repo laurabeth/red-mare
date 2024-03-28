@@ -2,14 +2,13 @@ import { Box, Container, Typography } from "@mui/material";
 
 export const Home = () => {
   return (
-    <Container sx={{ height: "100%" }}>
+    <Container>
       <Box
         display="flex"
         flexDirection="column"
         alignItems="flex-end"
         justifyContent="center"
-        height="100%"
-      >
+        height="90vh">
         <Typography variant="h1" letterSpacing="0.1em" sx={{ fontSize: "9em" }}>
           RedMare
         </Typography>
